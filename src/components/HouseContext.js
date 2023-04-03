@@ -39,6 +39,7 @@ const HouseContextProvider = ({children}) => {
   }, [])
 
   const handleClick = () => {
+    setLoading(true)
     // console.log(country, property, price);
 
     // create function that cheak if the stringe include (any)
@@ -59,20 +60,42 @@ const HouseContextProvider = ({children}) => {
      // if all values are selected 
 
      if(house.country === country && house.type === property && house.price >= minPrice && house.price <= maxPrice) {
-      return house
+      return 
      }
 
      if(!isDefault(country) && isDefault(property) && isDefault(price)){
       return house.country === country;
-     }
-     if(!isDefault(property) && isDefault(country)  && isDefault(price)){
-      // return ;
-      console.log(house.type === property);
-     }
-    
+     };
 
+     if(!isDefault(property) && isDefault(country) && isDefault(price)){
+      return house.type === property; 
+     }
+     if(!isDefault(price) && isDefault(country) && isDefault(property)){
+      if(housePrice >= minPrice && housePrice <= maxPrice){
+        return house;
+      }
+     }
+
+     if(!isDefault(country) && !isDefault(property) && isDefault(price)){
+      return house.country === country && house.type === property;
+     }
+
+     if(!isDefault(country) && isDefault(property) && !isDefault(price)){
+      if(housePrice >= minPrice && housePrice <= maxPrice){
+        return house.country === country;
+      }
+     }
+     if(isDefault(country) && !isDefault(property) && !isDefault(price)){
+      if(housePrice >= minPrice && housePrice <= maxPrice){
+        return house.type === property;
+      }
+     }
     });
-    console.log(newHouses); 
+    // console.log(newHouses);
+    setTimeout(() => {
+      return newHouses.length < 1 ? setHouses([]) : setHouses(newHouses),
+      setLoading(false);
+    }, 1000)
   }
 
   return <HouseContext.Provider value={
@@ -87,7 +110,8 @@ const HouseContextProvider = ({children}) => {
       setPrice,
       houses,
       loading,
-      handleClick
+      handleClick, 
+      loading
     }
   }>
     {children}
