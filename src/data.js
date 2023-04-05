@@ -63,7 +63,7 @@ export const housesData = [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, illoat. Repudiandae ratione impedit delectus consectetur. Aspernaturvero obcaecati placeat ab distinctio unde ipsam molestias atqueratione delectus blanditiis nemo eius dignissimos doloremque quaealiquid maiores id tempore consequatur, quod pariatur saepe.',
     image: House1,
     imageLg: House1Lg,
-    country: 'United States',
+    country: 'Canada',
     address: '7240C Argyle St. Lawndale, CA 90260',
     bedrooms: '6',
     bathrooms: '3',
@@ -90,7 +90,7 @@ export const housesData = [
     bathrooms: '3',
     surface: '4200 sq ft',
     year: '2016',
-    price: '140000',
+    price: '120000',
     agent: {
       image: Agent2,
       name: 'Daryl Hawker',

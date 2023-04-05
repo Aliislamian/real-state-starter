@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState,  useContext} from 'react';
 // import icons
 import {RiWallet3Line, RiArrowDownSLine, RiArrowUpSLine} from 'react-icons/ri';
 
@@ -16,7 +16,7 @@ const PriceRangeDropdown = () => {
       value : 'price range (any)'
     },
     {
-      value : '100000 - 130000'
+      value : '110000 - 170000'
     },
     {
       value : '130000 - 160000'
