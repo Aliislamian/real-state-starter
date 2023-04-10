@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import PropertyDetails from './pages/PropertyDetails';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 const App = () => {
   return <div className='max-w-[1440px] mx-auto bg-white'>
@@ -19,10 +20,11 @@ const App = () => {
 
       <Route path='/' element={<Home />}  />
       <Route path='/property/:id' element={<PropertyDetails />}  />
-      <Route exact path="/login" element={<Login/>}/>
+      
         
       
       <Route path='/login' element={<Login />}  />
+      <Route path='/signup' element={<Signup />}  />
     </Routes>
     <Footer />
     </div>;
